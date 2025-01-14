@@ -1,0 +1,357 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-color: #111;
+}
+
+/* Header Styles */
+header {
+    background-color: #111; /* Consistent dark background */
+    padding: 1em 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between; /* Separate logo and nav-container */
+    align-items: center; /* Vertically align items */
+    max-width: 1200px; /* Limit header width */
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+.logo {
+    flex: 1; /* Pushes the nav-container to the right */
+}
+
+.logo img {
+    height: 50px; /* Fixed logo height */
+    max-width: 100%; /* Maintain proper scaling */
+    object-fit: contain; /* Prevents image distortion */
+}
+
+.nav-container {
+    display: flex;
+    align-items: center; /* Vertically align nav items and button */
+    flex: 0; /* Prevents it from taking up extra space */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 1em; /* Space between navigation links (M.M.M, WORK, CONTACT) */
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.nav-links a:hover {
+    color: gray; /* Light gray color on hover */
+}
+
+.lang-toggle {
+    margin-left: 2em; /* Space between CONTACT and the language toggle button */
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5em 1em;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+}
+
+.lang-toggle:hover {
+    background-color: #666; /* Change background on hover */
+    color: white;
+}
+
+/* Landing Section */
+#landing {
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    height: 80vh; /* Adjust height */
+    background-color: #111;
+}
+
+.landing-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center; /* Aligns the image and text containers vertically */
+}
+
+.image-container {
+    flex: 1;
+    background-color: #222; /* Placeholder background for image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.landing-image {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.content-container {
+    flex: 1;
+    padding: 2em;
+    display: flex; /* Flexbox for alignment */
+    flex-direction: column; /* Aligns text and buttons vertically */
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+    text-align: center;
+}
+
+.content-container .name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    color: white;
+    margin-bottom: 0.1em;
+}
+
+.content-container .tagline {
+    font-size: 13px;
+    color: gray;
+    margin-bottom: 4em;
+    line-height: 1.6;
+}
+
+.portfolio-btn {
+    display: inline-block;
+    background-color: white;
+    color: #111;
+    padding: 0.8em 2em; /* Button padding */
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    border-radius: 50px; /* Rounded button */
+    border: none;
+    cursor: pointer;
+    margin-bottom: 2em;
+    text-align: center; /* Ensures text inside button is centered */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+}
+
+.portfolio-btn:hover {
+    background-color: #2c4d2d; /* Change background to match site theme */
+    color: white; /* Change text to white */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 1em; /* Add some spacing from the Portfolio button */
+}
+
+.social-icons a {
+    color: white; /* Makes Font Awesome icons white */
+    font-size: 24px; /* Adjust size of icons */
+    text-decoration: none; /* Removes underline on links */
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.social-icons a:hover {
+    color: gray; /* Changes icon color on hover */
+}
+
+/* Work Section */
+#work {
+    padding: 1em 2em;
+    background-color: #111;
+    text-align: center;
+}
+
+#work h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    color: white;
+    margin-bottom: 1em;
+}
+
+.work-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 0.5em; /* Space between blocks */
+    margin: 0 auto;
+    max-width: 1600px; /* Ensure consistent width */
+}
+
+.work-item {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16 / 9; /* Maintain consistent image ratio */
+}
+
+.work-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fills the block */
+    display: block;
+    transition: transform 0.3s ease; /* Smooth zoom on hover */
+}
+
+.work-item:hover img {
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease; /* Smooth fade-in on hover */
+}
+
+.work-item:hover .overlay {
+    opacity: 1; /* Show overlay on hover */
+}
+
+.overlay h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    color: white;
+    margin: 0;
+    text-align: center; /* Asegura que esté centrado */
+}
+
+.overlay p {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: white;
+    margin: 0.5em 0 0;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1em;
+    background-color: #111;
+    color: white;
+    margin-top: 2em;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Gallery for Project Pages */
+.project-gallery {
+    display: flex;
+    flex-direction: column; /* Ensure images are stacked vertically */
+    gap: 0; /* Remove any space between images */
+    width: 100%; /* Full width for the gallery */
+    margin: 0; /* Remove margins */
+    padding: 0; /* Remove padding */
+}
+
+.project-gallery .image-container {
+    width: 100%; /* Ensure each image container is full width */
+    overflow: hidden; /* Prevent overflow */
+}
+
+.project-gallery .image-container img {
+    width: 100%; /* Full width for images */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure proper alignment */
+    object-fit: cover; /* Fit images perfectly without distortion */
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: #111;
+    color: white;
+    padding: 4em 2em;
+    text-align: center;
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2em;
+    background-color: #222; /* Slightly lighter background for the box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+}
+
+.contact-container h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    margin-bottom: 0.5em;
+}
+
+.contact-container p {
+    font-size: 16px;
+    margin-bottom: 1.5em;
+    color: #bbb; /* Subtle gray for the text */
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8em;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    color: #111;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border: 2px solid #555; /* Subtle border on focus */
+}
+
+.contact-form textarea {
+    resize: none; /* Disable resizing */
+}
+
+.contact-btn {
+    padding: 0.8em;
+    font-size: 18px;
+    font-family: 'Bebas Neue', sans-serif;
+    color: white;
+    background-color: #444; /* Neutral button color */
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-btn:hover {
+    background-color: #666; /* Lighter shade on hover */
+}
